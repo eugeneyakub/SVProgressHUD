@@ -53,6 +53,7 @@
 
 - (void)show {
 	[SVProgressHUD show];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeWhite80];
 }
 
 - (void)showWithStatus {
