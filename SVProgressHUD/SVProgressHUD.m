@@ -34,10 +34,10 @@ static UIImage *SVProgressHUDErrorImage;
 static SVProgressHUDMaskType SVProgressHUDDefaultMaskType;
 static UIView *SVProgressHUDExtensionView;
 
-static const CGFloat SVProgressHUDRingRadius = 18;
-static const CGFloat SVProgressHUDRingNoTextRadius = 24;
-static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
-static const CGFloat SVProgressHUDUndefinedProgress = -1;
+static  CGFloat SVProgressHUDRingRadius = 18;
+static  CGFloat SVProgressHUDRingNoTextRadius = 24;
+static  CGFloat SVProgressHUDParallaxDepthPoints = 10;
+static  CGFloat SVProgressHUDUndefinedProgress = -1;
 
 @interface SVProgressHUD ()
 
@@ -86,6 +86,16 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 
 
 #pragma mark - Setters
+
++ (void) setSVProgressHUDRingRadius:(CGFloat)radius{
+    [self sharedView];
+    SVProgressHUDRingRadius = radius;
+}
+
++ (void)setSVProgressHUDRingNoTextRadius:(CGFloat)radius{
+    [self sharedView];
+    SVProgressHUDRingNoTextRadius = radius;
+}
 
 + (void)setStatus:(NSString *)string {
 	[[self sharedView] setStatus:string];
@@ -313,6 +323,13 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         case SVProgressHUDMaskTypeWhite80: {
             
             [[UIColor colorWithWhite:1 alpha:0.8] set];
+            CGContextFillRect(context, self.bounds);
+            
+            break;
+        }
+        case SVProgressHUDMaskTypeBlack80: {
+            
+            [[UIColor colorWithWhite:0 alpha:0.8] set];
             CGContextFillRect(context, self.bounds);
             
             break;

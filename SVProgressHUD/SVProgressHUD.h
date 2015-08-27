@@ -23,6 +23,7 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
     SVProgressHUDMaskTypeClear,     // don't allow user interactions
     SVProgressHUDMaskTypeBlack,     // don't allow user interactions and dim the UI in the back of the HUD
     SVProgressHUDMaskTypeWhite80,
+    SVProgressHUDMaskTypeBlack80,
     SVProgressHUDMaskTypeGradient   // don't allow user interactions and dim the UI with a a-la-alert-view background gradient
 };
 
@@ -32,6 +33,8 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
 
 + (void)setBackgroundColor:(UIColor*)color;                 // default is [UIColor whiteColor]
 + (void)setForegroundColor:(UIColor*)color;                 // default is [UIColor blackColor]
++ (void)setSVProgressHUDRingRadius: (CGFloat) radius;
++ (void)setSVProgressHUDRingNoTextRadius: (CGFloat) radius;
 + (void)setCornerRadius:(CGFloat)cornerRadius;              // default is 14 pt
 + (void)setRingThickness:(CGFloat)width;                    // default is 4 pt
 + (void)setFont:(UIFont*)font;                              // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]

@@ -52,8 +52,10 @@
 #pragma mark - Show Methods Sample
 
 - (void)show {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack80];
+    [SVProgressHUD setSVProgressHUDRingNoTextRadius:10];
 	[SVProgressHUD show];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeWhite80];
+
 }
 
 - (void)showWithStatus {
